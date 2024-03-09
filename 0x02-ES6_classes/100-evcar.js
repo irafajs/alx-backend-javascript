@@ -5,4 +5,10 @@ export default class EVCar extends Car {
     super(brand, motor, color);
     this._range = range;
   }
+
+  cloneCar() {
+    // eslint-disable-next-line no-unused-vars
+    const { _brand, _motor, _color } = this;
+    return new Car();
+  }
 }
