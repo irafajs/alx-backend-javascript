@@ -32,6 +32,7 @@ function countStudents(path) {
 
       const totalStudents = lines.length - 1;
       const output = [`Number of students: ${totalStudents}`, ...fieldCounts];
+      console.log(output.join('\n'));
       resolve(output.join('\n'));
     });
   });
