@@ -16,8 +16,11 @@ app.on('request', (req, res) => {
     const databasePath = 'database.csv';
     countStudents(databasePath)
       .then((output) => {
+        const title = 'This is the list of our students\n';
+        const data = title + output;
+        res.setHeader('Content-Length', Buffer.byteLength(data));
         res.statusCode = 200;
-        res.end(output);
+        res.end(data);
       })
       .catch((error) => {
         res.statusCode = 500;
