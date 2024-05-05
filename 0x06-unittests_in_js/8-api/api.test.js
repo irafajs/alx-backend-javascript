@@ -3,27 +3,12 @@ const { expect } = require('chai');
 
 const server = require('./api');
 
-describe('Index Page', function() {
-    it('should return status code 200', function(done) {
-        request.get('http://localhost:7865/', function(error, response) {
-            if (error) {
-                done(error);
-            } else {
-                expect(response.statusCode).to.equal(200);
-                done();
-            }
-        });
+describe('Index Page', () => {
+  it('should return status code 200', (done) => {
+    request.get('http://localhost:7865/', (_err, res, body) => {
+      expect(res.statusCode).to.equal(200);
+      expect(body).to.equal('Welcome to the payment system');
+      done();
     });
-
-    it('should return the correct result', function(done) {
-        request.get('http://localhost:7865/', function(error, response, body) {
-            if (error) {
-                done(error);
-            } else {
-                expect(body).to.equal('Welcome to the payment system');
-                done();
-            }
-        });
-    });
-
+  });
 });
