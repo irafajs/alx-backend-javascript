@@ -2,7 +2,6 @@
 pushauto
 babel.config.js
 database.csv
-package.json
 package-lock.json
 node_modules/
 .eslintrc.js
